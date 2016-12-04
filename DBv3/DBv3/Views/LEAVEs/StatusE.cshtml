@@ -1,0 +1,76 @@
+﻿@model DBv3.Models.LEAVE
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>STATUS Edit</h2>
+
+<div>   
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERSON.USERNAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DATELEAVE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATELEAVE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DETAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DETAIL)
+        </dd>
+    </dl>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>LEAVE</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.NO)
+        @Html.HiddenFor(model => model.EMID)
+        @Html.HiddenFor(model => model.PERSON)
+        @Html.HiddenFor(model => model.DATELEAVE)
+        @Html.HiddenFor(model => model.TIME)
+        @Html.HiddenFor(model => model.DETAIL)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.STATUS, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("STATUS",null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.STATUS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

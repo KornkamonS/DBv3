@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DBv3.Models.CARPARK>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CAR.PROVINCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIMEIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIMEOUT)
+        </th>      
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CAR.PROVINCE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PERSON.USERNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIMEIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIMEOUT)
+            </td>            
+        </tr>
+    }
+
+</table>
+<div>@Html.ActionLink("Bake To Menu", "UserHome", "Home")</div>

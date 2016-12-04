@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DBv3.Models.LAUNDRY>
+
+@{
+    ViewBag.Title = "REGlaundry";
+    
+}
+
+<h2>Index</h2>
+<h3>อาคาร @ViewBag.Building   ห้อง @ViewBag.Room</h3>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DATELAUNDRY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATELAUNDRY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Back to Menu", "UserHome", "Home")
+</div>

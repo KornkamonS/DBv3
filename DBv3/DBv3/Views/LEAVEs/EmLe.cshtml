@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DBv3.Models.LEAVE>
+
+@{
+    ViewBag.Title = "EmLe";
+}
+
+<h2>EmLe</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EachCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DATELEAVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DETAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>     
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATELEAVE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DETAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>       
+        
+    </tr>
+}
+
+</table>
+<div>@Html.ActionLink("Bake To Menu", "UserHome", "Home")</div>

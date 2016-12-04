@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DBv3.Models.WORKTIME>
+
+@{
+    ViewBag.Title = "EmIndex";
+}
+
+<h2>EmIndex</h2>
+<h4>@Session["username"].ToString()</h4>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DATEWORKON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIMESTART)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIMESTOP)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATEWORKON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIMESTART)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TIMESTOP)
+            </td>
+        </tr>
+    }
+
+</table>
+<div> @Html.ActionLink("Bake To Menu", "UserHome", "Home")</div>

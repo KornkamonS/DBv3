@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DBv3.Models.LEAVE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New for Employee", "Create") <br />
+    @Html.ActionLink("Create New for Me", "EachCreate")
+</p>
+<table class="table">
+    <tr><th>
+    @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+</th><th>
+    @Html.DisplayNameFor(model => model.PERSON.POSITION)
+</th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATELEAVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DETAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr><td>
+    @Html.DisplayFor(modelItem => item.PERSON.USERNAME)
+</td><td>
+    @Html.DisplayFor(modelItem => item.PERSON.POSITION)
+</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATELEAVE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DETAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Update status", "StatusE", new { id=item.NO }) |            
+            @Html.ActionLink("Delete", "Delete", new { id=item.NO })
+        </td>
+    </tr>
+}
+
+</table>
+<div>@Html.ActionLink("Bake To Menu", "FollowEm", "User")</div>

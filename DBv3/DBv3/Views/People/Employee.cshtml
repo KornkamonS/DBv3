@@ -1,0 +1,79 @@
+﻿@model IEnumerable<DBv3.Models.PERSON>
+
+@{
+    ViewBag.Title = "Employee";
+}
+
+<h2>Employee</h2>
+
+<p>
+    @Html.ActionLink("Create New", "EmCreate")
+    @using (Html.BeginForm())
+    {
+    <p>
+        ค้นหา Username: @Html.TextBox("SearchString")
+        <input calss="form-control" type="submit" value="Search" />
+    </p>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LASTNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GENDER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POSITION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HIREDATE)
+        </th>            
+        <th>
+            @Html.DisplayNameFor(model => model.SALARYTB.SALARY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERNAME)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LASTNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GENDER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POSITION)
+        </td>
+        <td>
+            @String.Format("{0:d}", item.HIREDATE)            
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.SALARYTB.SALARY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDCARD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDCARD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDCARD })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Bake To Menu","UserHome","Home")
+</div>

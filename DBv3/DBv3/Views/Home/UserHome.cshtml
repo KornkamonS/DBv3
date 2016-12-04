@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "UserHome";
+}
+@if (Session["username"] != null)
+{
+    <h2>UserHome</h2>
+
+    <text>
+        welcome @Session["username"].ToString() <br />
+        Position: @Session["position"].ToString()<br />
+    </text>
+        @Html.ActionLink("Logout", "Logout", "Home")<br />
+        @Html.ActionLink("index", "index", "resident")<br />
+        @Html.ActionLink("room", "index", "ROOMs")<br />
+        @Html.ActionLink("Employee", "index", "Employee")<br />
+        @Html.ActionLink("vip", "index", "VIPROOMs")<br />
+        @Html.ActionLink("reg", "index", "REGULAROOMs")<br />
+
+   
+}
+else
+{ <text>please login !!</text>}
+
+

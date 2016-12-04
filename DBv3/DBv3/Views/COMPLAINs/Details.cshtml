@@ -1,0 +1,40 @@
+﻿@model DBv3.Models.COMPLAIN
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>COMPLAIN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PERSON.USERNAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DETAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DETAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>  
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCOMPLAIN }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

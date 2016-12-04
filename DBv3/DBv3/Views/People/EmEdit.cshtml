@@ -1,0 +1,154 @@
+﻿@model DBv3.Models.PERSON
+
+@{
+    ViewBag.Title = "EmEdit";
+}
+
+<h2>EmEdit</h2>
+<div>
+    <h4>PERSON</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDCARD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDCARD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.USERNAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LASTNAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LASTNAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GENDER)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GENDER)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.POSITION)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.POSITION)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HIREDATE)
+        </dt>
+        <dd>
+            @String.Format("{0:d}", Model.HIREDATE)
+            
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ADDRESS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ADDRESS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONENUMBER)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PHONENUMBER)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SALARYTB.SALARY)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SALARYTB.SALARY)
+        </dd>
+    </dl>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>PERSON</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IDCARD)
+        @Html.HiddenFor(model => model.USERNAME)
+        @Html.HiddenFor(model => model.PASSWORD)
+        @Html.HiddenFor(model => model.GENDER)
+        @Html.HiddenFor(model => model.IDBUILDING)
+        @Html.HiddenFor(model => model.IDROOM)   
+        @Html.HiddenFor(model => model.HIREDATE)
+        <div class="form-group">
+            @Html.LabelFor(model => model.NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NAME, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NAME, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LASTNAME, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LASTNAME, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LASTNAME, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.POSITION, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("POSITION", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.POSITION, "", new { @class = "text-danger" })
+            </div>
+        </div>        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ADDRESS, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ADDRESS, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ADDRESS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PHONENUMBER, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PHONENUMBER, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PHONENUMBER, "", new { @class = "text-danger" })
+            </div>
+        </div>
+       
+        <div class="form-group">
+            @Html.LabelFor(model => model.EMAIL, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Employee")
+</div>

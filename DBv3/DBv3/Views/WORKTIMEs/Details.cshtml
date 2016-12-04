@@ -1,0 +1,26 @@
+﻿@model DBv3.Models.WORKTIME
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WORKTIME</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERSON.USERNAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EMID, day = Model.DATEWORKON, str = Model.TIMESTART, sto = Model.TIMESTOP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

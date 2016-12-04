@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DBv3.Models.LATE>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LATE</h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PERSON.POSITION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DATELATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TIMEATTENDANCE)
+            </th>
+            
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PERSON.USERNAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PERSON.POSITION)
+                </td>
+                <td>
+                    @String.Format("{0:d}", item.DATELATE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TIMEATTENDANCE)
+                </td>
+                
+            </tr>
+        }
+        </table>
+</div>
+<p>  
+    @Html.ActionLink("Back to List", "Index")
+</p>

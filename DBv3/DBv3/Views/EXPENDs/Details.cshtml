@@ -1,0 +1,50 @@
+﻿@model DBv3.Models.EXPEND
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EXPEND</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DETAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DETAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATEEXPEND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATEEXPEND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERSON.USERNAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

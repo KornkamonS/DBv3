@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="efdbe27007fe421e86ce3455d8c2f1ce" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.ABSENC" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BILL" Width="1.5" PointX="5.25" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BUILDING" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CAR" Width="1.5" PointX="3" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CARPARK" Width="1.5" PointX="5.25" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMPLAIN" Width="1.5" PointX="3" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EXPEND" Width="1.5" PointX="3" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FITNESS" Width="1.5" PointX="3" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LATE" Width="1.5" PointX="3" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LAUNDRY" Width="1.5" PointX="7.5" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LEAVE" Width="1.5" PointX="3" PointY="38" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.METER" Width="1.5" PointX="7.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PERSON" Width="1.5" PointX="0.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.REGULAROOM" Width="1.5" PointX="7.5" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ROOM" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.SALARYTB" Width="1.5" PointX="3" PointY="41.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VIPROOM" Width="1.5" PointX="7.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WORKTIME" Width="1.5" PointX="3" PointY="43.5" IsExpanded="true" />
+        <AssociationConnector Association="Model.ABSENC_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.BILL_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.BILL1_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.BUILDING_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ROOM1_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CAR_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CARPARK_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CARPARK1_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.COMPLAIN1_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.EXPEND1_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FFK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.LATE1_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.LAUNDRY_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.LEAVE1_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.METER_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.PERSON_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SALARY_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.WORKTIME1_CON" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.REGULAROOM_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.VIPROOM_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

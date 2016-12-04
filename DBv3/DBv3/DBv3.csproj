@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B8A18EA-94DA-4869-889F-EB06D220277C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DBv3</RootNamespace>
+    <AssemblyName>DBv3</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.12.1.2400\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.12.1.2400\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ABSENCsController.cs" />
+    <Compile Include="Controllers\BILLsController.cs" />
+    <Compile Include="Controllers\BUILDINGsController.cs" />
+    <Compile Include="Controllers\CARPARKsController.cs" />
+    <Compile Include="Controllers\CARsController.cs" />
+    <Compile Include="Controllers\COMPLAINsController.cs" />
+    <Compile Include="Controllers\EXPENDsController.cs" />
+    <Compile Include="Controllers\FITNESSesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LATEsController.cs" />
+    <Compile Include="Controllers\LAUNDRiesController.cs" />
+    <Compile Include="Controllers\LEAVEsController.cs" />
+    <Compile Include="Controllers\METERsController.cs" />
+    <Compile Include="Controllers\PeopleController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\REGULAROOMsController.cs" />
+    <Compile Include="Controllers\ROOMsController.cs" />
+    <Compile Include="Controllers\SALARYTBsController.cs" />
+    <Compile Include="Controllers\VIPROOMsController.cs" />
+    <Compile Include="Controllers\WORKTIMEsController.cs" />
+    <Compile Include="Models\ABSENC.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApartmentModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApartmentModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApartmentModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ApartmentModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApartmentModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BILL.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BUILDING.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CAR.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CARPARK.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMPLAIN.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Droplist.cs" />
+    <Compile Include="Models\EXPEND.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FITNESS.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LATE.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LAUNDRY.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LEAVE.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\METER.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PERSON.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\REGULAROOM.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ROOM.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SALARYTB.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VIPROOM.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WORKTIME.cs">
+      <DependentUpon>ApartmentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Count.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\ApartmentModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ApartmentModel.edmx</DependentUpon>
+      <LastGenOutput>ApartmentModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ApartmentModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ApartmentModel.edmx</DependentUpon>
+      <LastGenOutput>ApartmentModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\ApartmentModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ApartmentModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ApartmentModel.edmx.diagram">
+      <DependentUpon>ApartmentModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\UserHome.cshtml" />
+    <Content Include="Views\Home\Logout.cshtml" />
+    <Content Include="Views\People\EmCreate.cshtml" />
+    <Content Include="Views\People\Delete.cshtml" />
+    <Content Include="Views\People\Details.cshtml" />
+    <Content Include="Views\People\Index.cshtml" />
+    <Content Include="Views\ROOMs\Create.cshtml" />
+    <Content Include="Views\ROOMs\Delete.cshtml" />
+    <Content Include="Views\ROOMs\Details.cshtml" />
+    <Content Include="Views\ROOMs\Edit.cshtml" />
+    <Content Include="Views\ROOMs\Index.cshtml" />
+    <Content Include="Views\REGULAROOMs\Create.cshtml" />
+    <Content Include="Views\REGULAROOMs\Delete.cshtml" />
+    <Content Include="Views\REGULAROOMs\Details.cshtml" />
+    <Content Include="Views\REGULAROOMs\Edit.cshtml" />
+    <Content Include="Views\REGULAROOMs\Index.cshtml" />
+    <Content Include="Views\VIPROOMs\Create.cshtml" />
+    <Content Include="Views\VIPROOMs\Delete.cshtml" />
+    <Content Include="Views\VIPROOMs\Details.cshtml" />
+    <Content Include="Views\VIPROOMs\Edit.cshtml" />
+    <Content Include="Views\VIPROOMs\Index.cshtml" />
+    <Content Include="Views\ABSENCs\Create.cshtml" />
+    <Content Include="Views\ABSENCs\Delete.cshtml" />
+    <Content Include="Views\ABSENCs\Details.cshtml" />
+    <Content Include="Views\ABSENCs\Edit.cshtml" />
+    <Content Include="Views\ABSENCs\Index.cshtml" />
+    <Content Include="Views\BILLs\Create.cshtml" />
+    <Content Include="Views\BILLs\Delete.cshtml" />
+    <Content Include="Views\BILLs\Details.cshtml" />
+    <Content Include="Views\BILLs\Edit.cshtml" />
+    <Content Include="Views\BILLs\Index.cshtml" />
+    <Content Include="Views\BUILDINGs\Create.cshtml" />
+    <Content Include="Views\BUILDINGs\Delete.cshtml" />
+    <Content Include="Views\BUILDINGs\Details.cshtml" />
+    <Content Include="Views\BUILDINGs\Edit.cshtml" />
+    <Content Include="Views\BUILDINGs\Index.cshtml" />
+    <Content Include="Views\CARs\Create.cshtml" />
+    <Content Include="Views\CARs\Delete.cshtml" />
+    <Content Include="Views\CARs\Details.cshtml" />
+    <Content Include="Views\CARs\Edit.cshtml" />
+    <Content Include="Views\CARs\Index.cshtml" />
+    <Content Include="Views\CARPARKs\Create.cshtml" />
+    <Content Include="Views\CARPARKs\Delete.cshtml" />
+    <Content Include="Views\CARPARKs\Details.cshtml" />
+    <Content Include="Views\CARPARKs\Edit.cshtml" />
+    <Content Include="Views\CARPARKs\Index.cshtml" />
+    <Content Include="Views\COMPLAINs\Delete.cshtml" />
+    <Content Include="Views\COMPLAINs\Details.cshtml" />
+    <Content Include="Views\COMPLAINs\Edit.cshtml" />
+    <Content Include="Views\COMPLAINs\REGIndex.cshtml" />
+    <Content Include="Views\EXPENDs\Create.cshtml" />
+    <Content Include="Views\EXPENDs\Delete.cshtml" />
+    <Content Include="Views\EXPENDs\Details.cshtml" />
+    <Content Include="Views\EXPENDs\Edit.cshtml" />
+    <Content Include="Views\EXPENDs\Index.cshtml" />
+    <Content Include="Views\FITNESSes\Create.cshtml" />
+    <Content Include="Views\FITNESSes\Delete.cshtml" />
+    <Content Include="Views\FITNESSes\Details.cshtml" />
+    <Content Include="Views\FITNESSes\Edit.cshtml" />
+    <Content Include="Views\FITNESSes\Index.cshtml" />
+    <Content Include="Views\LATEs\Create.cshtml" />
+    <Content Include="Views\LATEs\Delete.cshtml" />
+    <Content Include="Views\LATEs\Details.cshtml" />
+    <Content Include="Views\LATEs\Edit.cshtml" />
+    <Content Include="Views\LATEs\Index.cshtml" />
+    <Content Include="Views\LAUNDRies\Create.cshtml" />
+    <Content Include="Views\LAUNDRies\Delete.cshtml" />
+    <Content Include="Views\LAUNDRies\Details.cshtml" />
+    <Content Include="Views\LAUNDRies\Edit.cshtml" />
+    <Content Include="Views\LAUNDRies\Index.cshtml" />
+    <Content Include="Views\LEAVEs\Create.cshtml" />
+    <Content Include="Views\LEAVEs\Delete.cshtml" />
+    <Content Include="Views\LEAVEs\Details.cshtml" />
+    <Content Include="Views\LEAVEs\Edit.cshtml" />
+    <Content Include="Views\LEAVEs\Index.cshtml" />
+    <Content Include="Views\METERs\Create.cshtml" />
+    <Content Include="Views\METERs\Delete.cshtml" />
+    <Content Include="Views\METERs\Details.cshtml" />
+    <Content Include="Views\METERs\Edit.cshtml" />
+    <Content Include="Views\METERs\Index.cshtml" />
+    <Content Include="Views\SALARYTBs\Create.cshtml" />
+    <Content Include="Views\SALARYTBs\Delete.cshtml" />
+    <Content Include="Views\SALARYTBs\Details.cshtml" />
+    <Content Include="Views\SALARYTBs\Edit.cshtml" />
+    <Content Include="Views\SALARYTBs\Index.cshtml" />
+    <Content Include="Views\WORKTIMEs\Create.cshtml" />
+    <Content Include="Views\WORKTIMEs\Delete.cshtml" />
+    <Content Include="Views\WORKTIMEs\Details.cshtml" />
+    <Content Include="Views\WORKTIMEs\Edit.cshtml" />
+    <Content Include="Views\WORKTIMEs\Index.cshtml" />
+    <Content Include="Views\User\REGIndex.cshtml" />
+    <Content Include="Views\CARPARKs\REGcarpark.cshtml" />
+    <Content Include="Views\FITNESSes\REGfitness.cshtml" />
+    <Content Include="Views\LAUNDRies\REGlaundry.cshtml" />
+    <Content Include="Views\METERs\REGmeter.cshtml" />
+    <Content Include="Views\COMPLAINs\Index.cshtml" />
+    <Content Include="Views\User\WatchmanIndex.cshtml" />
+    <Content Include="Views\User\maidIndex.cshtml" />
+    <Content Include="Views\COMPLAINs\Status.cshtml" />
+    <Content Include="Views\COMPLAINs\Create.cshtml" />
+    <Content Include="Views\COMPLAINs\REGCreate.cshtml" />
+    <Content Include="Views\COMPLAINs\REGedit.cshtml" />
+    <Content Include="Views\People\Resident.cshtml" />
+    <Content Include="Views\People\Employee.cshtml" />
+    <Content Include="Views\People\ResDetails.cshtml" />
+    <Content Include="Views\People\EmDetails.cshtml" />
+    <Content Include="Views\People\ResEdit.cshtml" />
+    <Content Include="Views\People\EmEdit.cshtml" />
+    <Content Include="Views\WORKTIMEs\EmIndex.cshtml" />
+    <Content Include="Views\User\OwnerIndex.cshtml" />
+    <Content Include="Views\People\EmDelete.cshtml" />
+    <Content Include="Views\People\ResDelete.cshtml" />
+    <Content Include="Views\User\FollowEM.cshtml" />
+    <Content Include="Views\User\RecIndex.cshtml" />
+    <Content Include="Views\LEAVEs\EachCreate.cshtml" />
+    <Content Include="Views\LEAVEs\EmLe.cshtml" />
+    <Content Include="Views\LEAVEs\StatusE.cshtml" />
+    <Content Include="Views\People\Edit.cshtml" />
+    <Content Include="Views\People\ResCreate.cshtml" />
+    <Content Include="Views\People\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2833</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2833/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

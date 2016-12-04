@@ -1,0 +1,94 @@
+﻿@model IEnumerable<DBv3.Models.BILL>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDBILL)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.ELECTRICITYBILL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WATERBILL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERNETBILL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLEANBILL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FITNESSBILL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATEBILL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDROOM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUILDING.NAME)
+        </th>
+        <th>
+            <text>ผู้รับเงิน</text>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDBILL)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.ELECTRICITYBILL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WATERBILL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERNETBILL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLEANBILL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FITNESSBILL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATEBILL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDROOM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUILDING.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PERSON.USERNAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDBILL }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDBILL }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDBILL })
+        </td>
+    </tr>
+}
+
+</table>
+<div>@Html.ActionLink("Bake To Menu", "UserHome", "Home")</div>

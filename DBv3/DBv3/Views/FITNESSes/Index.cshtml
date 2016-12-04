@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DBv3.Models.FITNESS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DAY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PERSON.USERNAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NO })
+        </td>
+    </tr>
+}
+
+</table><div>@Html.ActionLink("Bake To Menu", "UserHome", "Home")</div>

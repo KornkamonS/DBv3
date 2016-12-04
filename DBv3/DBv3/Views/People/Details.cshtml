@@ -1,0 +1,105 @@
+﻿@model DBv3.Models.PERSON
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PERSON</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDCARD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDCARD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.USERNAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PASSWORD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PASSWORD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LASTNAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LASTNAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GENDER)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GENDER)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.POSITION)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.POSITION)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HIREDATE)
+        </dt>
+        <dd>
+            @String.Format("{0:d}", Model.HIREDATE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ADDRESS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ADDRESS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONENUMBER)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PHONENUMBER)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ROOM.IDROOM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROOM.IDROOM)
+        </dd>
+        <dt>
+           <text>BUILDING</text>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROOM.BUILDING.NAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SALARYTB.IDCARD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SALARYTB.IDCARD)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCARD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

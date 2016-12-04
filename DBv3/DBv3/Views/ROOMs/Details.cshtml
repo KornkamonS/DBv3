@@ -1,0 +1,80 @@
+﻿@model DBv3.Models.ROOM
+
+@{
+    ViewBag.Title = "Details";
+    int count = (int)ViewBag.COUNT;
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ROOM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLEANTIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLEANTIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLEANDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLEANDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BUILDING.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BUILDING.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REGULAROOM.SEVICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REGULAROOM.SEVICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VIPROOM.TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VIPROOM.TIME)
+        </dd>
+        <dt>
+           <text>ROOM MATE</text>
+        </dt>
+        <dd>
+            @count
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.IDROOM,id2=Model.IDBUILDING  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

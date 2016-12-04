@@ -1,0 +1,85 @@
+﻿@model DBv3.Models.PERSON
+
+@{
+    ViewBag.Title = "EmDetails";
+}
+
+<h2>EmDetails</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDCARD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDCARD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.USERNAME)
+        </dd>       
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LASTNAME)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LASTNAME)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GENDER)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GENDER)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.POSITION)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.POSITION)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HIREDATE)
+        </dt>
+        <dd>
+            @String.Format("{0:d}", Model.HIREDATE)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ADDRESS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ADDRESS)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PHONENUMBER)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PHONENUMBER)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>        
+        <dt>
+            @Html.DisplayNameFor(model => model.SALARYTB.SALARY)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SALARYTB.SALARY)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCARD }) |
+    @Html.ActionLink("Back to List", "Employee")
+</p>
+

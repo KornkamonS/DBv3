@@ -1,0 +1,28 @@
+﻿@model DBv3.Models.Login
+@{
+    ViewBag.Title = "Login";
+}
+@using(Html.BeginForm("Login","Home",FormMethod.Post))
+{
+    <fieldset style="width:300px">
+        <legend>Login </legend>
+        <table>
+            <tr>
+                <td>@Html.Label("Enter User Name")</td>
+            </tr> 
+            <tr>
+                <td>@Html.TextBoxFor(a => a.username)</td>
+                <td>@Html.ValidationMessageFor(a => a.username)</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Enter Password")</td></tr>
+            <tr>
+                <td>@Html.PasswordFor(a => a.password)</td>
+                <td>@Html.ValidationMessageFor(a => a.password)</td>
+            </tr>
+        <tr>
+            <td><input type="submit" id="submitbtn" value="Login"/></td>
+        </tr>
+        </table>
+    </fieldset>
+}

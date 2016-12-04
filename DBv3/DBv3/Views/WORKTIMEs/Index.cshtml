@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DBv3.Models.WORKTIME>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATEWORKON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIMESTART)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIMESTOP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            @Html.DisplayFor(modelItem => item.PERSON.USERNAME)
+        </th>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATEWORKON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIMESTART)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIMESTOP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EMID,day=item.DATEWORKON,str=item.TIMESTART,sto=item.TIMESTOP }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EMID, day = item.DATEWORKON, str = item.TIMESTART, sto = item.TIMESTOP }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EMID, day = item.DATEWORKON, str = item.TIMESTART, sto = item.TIMESTOP })
+        </td>
+    </tr>
+}
+
+</table>

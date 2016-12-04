@@ -1,0 +1,42 @@
+﻿@model DBv3.Models.METER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>METER</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOWATER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOWATER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOELECTRICITY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOELECTRICITY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ROOM.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROOM.STATUS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { room = Model.IDROOM, building = Model.IDBUILDING, year = Model.YEAR, month = Model.MONTH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

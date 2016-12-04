@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "OwnerIndex";
+}
+
+<h2>Owner Index</h2>
+<h3>@Session["username"].ToString()</h3><br />
+
+@Html.ActionLink("ข้อมูลห้องพัก", "Index", "ROOMs")<br />
+@Html.ActionLink("ข้อมูลพนักงาน", "Employee", "People")<br />
+@Html.ActionLink("ข้อมูลผู้พักอาศัย", "Resident", "People")<br />
+@Html.ActionLink("อนุมัติลางาน", "Index", "LEAVEs")<br />
+@Html.ActionLink("คำร้องเรียนผู้พัก", "Index", "COMPLAINs")<br />
+@Html.ActionLink("รถภายในหอพัก", "Index", "CARs")<br />
+@Html.ActionLink("ตารางการทำงานพนักงานพัก", "Index", "WORKTIMEs")<br />
+@Html.ActionLink("เงินเดือนพนักงานพัก", "Index", "SALARYTBs")<br />
+
+@Html.ActionLink("ดูขาดลาสายพนักงาน", "FollowEM", "User")<br />
+@Html.ActionLink("ผลประกอบการ", " ", " ")<br />
+

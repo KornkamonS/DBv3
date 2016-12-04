@@ -1,0 +1,61 @@
+﻿@model DBv3.Models.COMPLAIN
+
+@{
+    ViewBag.Title = "Status";
+}
+
+<h2>Status</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>COMPLAIN</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PERSON.USERNAME)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DETAIL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DETAIL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.STATUS)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.STATUS)
+            </dd>
+
+        </dl>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.STATUS, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.STATUS, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.STATUS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.IDCOMPLAIN)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DBv3.Models.METER>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDROOM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDBUILDING)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOWATER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOELECTRICITY)
+        </th>        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDBUILDING)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDROOM)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.NOWATER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOELECTRICITY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { room=item.IDROOM,building=item.IDBUILDING,year=item.YEAR,month=item.MONTH}) |
+            @Html.ActionLink("Details", "Details", new { room = item.IDROOM, building = item.IDBUILDING, year = item.YEAR, month = item.MONTH }) |
+            @Html.ActionLink("Delete", "Delete", new { room = item.IDROOM, building = item.IDBUILDING, year = item.YEAR, month = item.MONTH })
+        </td>
+    </tr>
+}
+
+</table>
+<div>@Html.ActionLink("Bake To Menu", "UserHome", "Home")</div>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DBv3.Models.SALARYTB>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SALARY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SALARY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PERSON.USERNAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDCARD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDCARD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDCARD })
+        </td>
+    </tr>
+}
+
+</table>
+<div>@Html.ActionLink("Bake To Menu", "UserHome", "Home")</div>

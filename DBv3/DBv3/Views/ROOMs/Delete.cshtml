@@ -1,0 +1,80 @@
+﻿@model DBv3.Models.ROOM
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ROOM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLEANTIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLEANTIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLEANDATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLEANDATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BUILDING.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BUILDING.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REGULAROOM.SEVICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REGULAROOM.SEVICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VIPROOM.TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VIPROOM.TIME)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DBv3.ViewModels.Count>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")<br />
+    @using (Html.BeginForm())
+    {
+    <p>
+        year: @Html.TextBox("YEAR")
+        month: @Html.TextBox("MONTH")  
+        <input calss="form-control" type="submit" value="Search" /><br />
+    </p>
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.count)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.count)
+                </td>
+                <td>
+                   
+                    @Html.ActionLink("Details", "Details", new { id = item.IDCARD, mon = item.mon, year = item.ye }) 
+                
+                </td>
+            </tr>
+        }
+
+    </table>
+<div>@Html.ActionLink("Bake To Menu", "FollowEm", "User")</div>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DBv3.Models.LAUNDRY>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (Session["position"].ToString() == "laundry_staff")
+    { @Html.ActionLink("Create New", "Create")}
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        BUILDING @Html.DropDownList("IDBUILDING", null, htmlAttributes: new { @class = "form-control" })
+        ROOM @Html.DropDownList("IDROOM", null, htmlAttributes: new { @class = "form-control" })
+        <input calss="form-control" id="but" name="but" type="submit" value="Search" /><br />
+        <input calss="form-control" id="but" name="but" type="submit" value="reset" /><br />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DATELAUNDRY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ROOM1.IDROOM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ROOM1.BUILDING.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.PRICE)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATELAUNDRY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ROOM1.IDROOM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ROOM1.BUILDING.NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRICE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STATUS)
+            </td>
+
+            <td>
+                @if (Session["position"].ToString() == "laundry_staff")
+            { @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            }
+        </td>
+    </tr>
+    }
+
+</table>
+<div>@Html.ActionLink("Bake To Menu", "UserHome", "Home")</div>

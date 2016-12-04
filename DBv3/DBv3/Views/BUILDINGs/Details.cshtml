@@ -1,0 +1,34 @@
+﻿@model DBv3.Models.BUILDING
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BUILDING</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERSON.USERNAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDBUILDING }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

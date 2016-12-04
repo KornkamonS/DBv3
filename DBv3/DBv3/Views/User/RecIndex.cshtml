@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "RecIndex";
+}
+
+<h2>Rec Index</h2>
+
+<h3>@Session["username"].ToString()</h3><br />
+@Html.ActionLink(" ข้อมูลห้องพัก", "Index", "ROOMs")<br />
+@Html.ActionLink("ข้อมูลพนักงาน", "Employee", "People")<br />
+@Html.ActionLink("ข้อมูลผู้พักอาศัย", "Resident", "People")<br />
+@Html.ActionLink("คำร้องเรียนผู้พัก", "Index", "COMPLAINs")<br />
+@Html.ActionLink("รถภายในหอพัก", "Index", "CARs")<br />
+@Html.ActionLink("ขอลาพักงาน", "Index", "LEAVEs")<br />
+
+@Html.ActionLink("ร้านซักรีด", "Index", "LAUNDRies")<br />
+@Html.ActionLink("บันทึกการจอดรถ", "Index", "CARPARKs")<br />
+@Html.ActionLink("Fitness", "Index", "FITNESSes")<br />

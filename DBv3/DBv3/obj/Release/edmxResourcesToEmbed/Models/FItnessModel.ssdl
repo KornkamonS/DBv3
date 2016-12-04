@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="FITNESS">
+    <Key>
+      <PropertyRef Name="NO" />
+    </Key>
+    <Property Name="NO" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="RESIDENT" Type="number" Precision="13" Scale="0" />
+    <Property Name="DAY" Type="date" />
+    <Property Name="TIME" Type="varchar2" MaxLength="20" />
+    <Property Name="PRICE" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="PERSON">
+    <Key>
+      <PropertyRef Name="IDCARD" />
+    </Key>
+    <Property Name="IDCARD" Type="number" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="LASTNAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="GENDER" Type="varchar2" MaxLength="10" />
+    <Property Name="POSITION" Type="varchar2" MaxLength="20" />
+    <Property Name="IDROOM" Type="number" Precision="10" Scale="0" />
+    <Property Name="HIREDATE" Type="date" Nullable="false" />
+    <Property Name="ADDRESS" Type="varchar2" MaxLength="50" />
+    <Property Name="PHONENUMBER" Type="varchar2" MaxLength="10" />
+    <Property Name="IDBUILDING" Type="number" Precision="10" Scale="0" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <Association Name="FFK">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="0..1" />
+    <End Role="FITNESS" Type="Self.FITNESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="FITNESS">
+        <PropertyRef Name="RESIDENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="FITNESS" EntityType="Self.FITNESS" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="PERSON" EntityType="Self.PERSON" Schema="APARTMENT" store:Type="Tables" />
+    <AssociationSet Name="FFK" Association="Self.FFK">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="FITNESS" EntitySet="FITNESS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

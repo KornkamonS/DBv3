@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DBv3.Models.METER>
+
+@{
+    ViewBag.Title = "REGmeter";
+}
+
+<h2>Meter</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDROOM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDBUILDING)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOWATER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOELECTRICITY)
+        </th>        
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDBUILDING)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDROOM)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.NOWATER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOELECTRICITY)
+        </td>
+        
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("Back to Menu", "REGIndex", "User")
+</p>

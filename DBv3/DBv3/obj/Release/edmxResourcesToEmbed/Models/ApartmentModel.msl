@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="ABSENCs">
+      <EntityTypeMapping TypeName="Model.ABSENC">
+        <MappingFragment StoreEntitySet="ABSENC">
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="EMID" ColumnName="EMID" />
+          <ScalarProperty Name="DATEABSENC" ColumnName="DATEABSENC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BILLs">
+      <EntityTypeMapping TypeName="Model.BILL">
+        <MappingFragment StoreEntitySet="BILL">
+          <ScalarProperty Name="IDBILL" ColumnName="IDBILL" />
+          <ScalarProperty Name="FITNESSBILL" ColumnName="FITNESSBILL" />
+          <ScalarProperty Name="ELECTRICITYBILL" ColumnName="ELECTRICITYBILL" />
+          <ScalarProperty Name="WATERBILL" ColumnName="WATERBILL" />
+          <ScalarProperty Name="INTERNETBILL" ColumnName="INTERNETBILL" />
+          <ScalarProperty Name="CLEANBILL" ColumnName="CLEANBILL" />
+          <ScalarProperty Name="DATEBILL" ColumnName="DATEBILL" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="IDBUILDING" ColumnName="IDBUILDING" />
+          <ScalarProperty Name="IDRECEIVER" ColumnName="IDRECEIVER" />
+          <ScalarProperty Name="IDROOM" ColumnName="IDROOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BUILDINGs">
+      <EntityTypeMapping TypeName="Model.BUILDING">
+        <MappingFragment StoreEntitySet="BUILDING">
+          <ScalarProperty Name="KEEPER" ColumnName="KEEPER" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="IDBUILDING" ColumnName="IDBUILDING" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CARs">
+      <EntityTypeMapping TypeName="Model.CAR">
+        <MappingFragment StoreEntitySet="CAR">
+          <ScalarProperty Name="IDCARD" ColumnName="IDCARD" />
+          <ScalarProperty Name="CARNUMBER" ColumnName="CARNUMBER" />
+          <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CARPARKs">
+      <EntityTypeMapping TypeName="Model.CARPARK">
+        <MappingFragment StoreEntitySet="CARPARK">
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="TIMEIN" ColumnName="TIMEIN" />
+          <ScalarProperty Name="TIMEOUT" ColumnName="TIMEOUT" />
+          <ScalarProperty Name="CARNUMBER" ColumnName="CARNUMBER" />
+          <ScalarProperty Name="PROVINCE" ColumnName="PROVINCE" />
+          <ScalarProperty Name="IDRECORDER" ColumnName="IDRECORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPLAINs">
+      <EntityTypeMapping TypeName="Model.COMPLAIN">
+        <MappingFragment StoreEntitySet="COMPLAIN">
+          <ScalarProperty Name="IDCARD" ColumnName="IDCARD" />
+          <ScalarProperty Name="DETAIL" ColumnName="DETAIL" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="IDCOMPLAIN" ColumnName="IDCOMPLAIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EXPENDs">
+      <EntityTypeMapping TypeName="Model.EXPEND">
+        <MappingFragment StoreEntitySet="EXPEND">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DETAIL" ColumnName="DETAIL" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="DATEEXPEND" ColumnName="DATEEXPEND" />
+          <ScalarProperty Name="IDRECORDER" ColumnName="IDRECORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FITNESSes">
+      <EntityTypeMapping TypeName="Model.FITNESS">
+        <MappingFragment StoreEntitySet="FITNESS">
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="RESIDENT" ColumnName="RESIDENT" />
+          <ScalarProperty Name="DAY" ColumnName="DAY" />
+          <ScalarProperty Name="TIME" ColumnName="TIME" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LATEs">
+      <EntityTypeMapping TypeName="Model.LATE">
+        <MappingFragment StoreEntitySet="LATE">
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="EMID" ColumnName="EMID" />
+          <ScalarProperty Name="DATELATE" ColumnName="DATELATE" />
+          <ScalarProperty Name="TIMEATTENDANCE" ColumnName="TIMEATTENDANCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LAUNDRies">
+      <EntityTypeMapping TypeName="Model.LAUNDRY">
+        <MappingFragment StoreEntitySet="LAUNDRY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ROOM" ColumnName="ROOM" />
+          <ScalarProperty Name="BUILDING" ColumnName="BUILDING" />
+          <ScalarProperty Name="DATELAUNDRY" ColumnName="DATELAUNDRY" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEAVEs">
+      <EntityTypeMapping TypeName="Model.LEAVE">
+        <MappingFragment StoreEntitySet="LEAVE">
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="EMID" ColumnName="EMID" />
+          <ScalarProperty Name="DATELEAVE" ColumnName="DATELEAVE" />
+          <ScalarProperty Name="TIME" ColumnName="TIME" />
+          <ScalarProperty Name="DETAIL" ColumnName="DETAIL" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="METERs">
+      <EntityTypeMapping TypeName="Model.METER">
+        <MappingFragment StoreEntitySet="METER">
+          <ScalarProperty Name="IDROOM" ColumnName="IDROOM" />
+          <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+          <ScalarProperty Name="MONTH" ColumnName="MONTH" />
+          <ScalarProperty Name="IDBUILDING" ColumnName="IDBUILDING" />
+          <ScalarProperty Name="NOWATER" ColumnName="NOWATER" />
+          <ScalarProperty Name="NOELECTRICITY" ColumnName="NOELECTRICITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="Model.PERSON">
+        <MappingFragment StoreEntitySet="PERSON">
+          <ScalarProperty Name="IDCARD" ColumnName="IDCARD" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="POSITION" ColumnName="POSITION" />
+          <ScalarProperty Name="IDROOM" ColumnName="IDROOM" />
+          <ScalarProperty Name="HIREDATE" ColumnName="HIREDATE" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="PHONENUMBER" ColumnName="PHONENUMBER" />
+          <ScalarProperty Name="IDBUILDING" ColumnName="IDBUILDING" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REGULAROOMs">
+      <EntityTypeMapping TypeName="Model.REGULAROOM">
+        <MappingFragment StoreEntitySet="REGULAROOM">
+          <ScalarProperty Name="SEVICE" ColumnName="SEVICE" />
+          <ScalarProperty Name="INTERNET" ColumnName="INTERNET" />
+          <ScalarProperty Name="IDROOM" ColumnName="IDROOM" />
+          <ScalarProperty Name="IDBUILDING" ColumnName="IDBUILDING" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROOMs">
+      <EntityTypeMapping TypeName="Model.ROOM">
+        <MappingFragment StoreEntitySet="ROOM">
+          <ScalarProperty Name="IDROOM" ColumnName="IDROOM" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="MAID" ColumnName="MAID" />
+          <ScalarProperty Name="CLEANTIME" ColumnName="CLEANTIME" />
+          <ScalarProperty Name="CLEANDATE" ColumnName="CLEANDATE" />
+          <ScalarProperty Name="IDBUILDING" ColumnName="IDBUILDING" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SALARYTBs">
+      <EntityTypeMapping TypeName="Model.SALARYTB">
+        <MappingFragment StoreEntitySet="SALARYTB">
+          <ScalarProperty Name="IDCARD" ColumnName="IDCARD" />
+          <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VIPROOMs">
+      <EntityTypeMapping TypeName="Model.VIPROOM">
+        <MappingFragment StoreEntitySet="VIPROOM">
+          <ScalarProperty Name="IDROOM" ColumnName="IDROOM" />
+          <ScalarProperty Name="IDBUILDING" ColumnName="IDBUILDING" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="TIME" ColumnName="TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WORKTIMEs">
+      <EntityTypeMapping TypeName="Model.WORKTIME">
+        <MappingFragment StoreEntitySet="WORKTIME">
+          <ScalarProperty Name="EMID" ColumnName="EMID" />
+          <ScalarProperty Name="DATEWORKON" ColumnName="DATEWORKON" />
+          <ScalarProperty Name="TIMESTART" ColumnName="TIMESTART" />
+          <ScalarProperty Name="TIMESTOP" ColumnName="TIMESTOP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

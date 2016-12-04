@@ -1,0 +1,30 @@
+﻿@model DBv3.Models.PERSON
+@{
+    ViewBag.Title = "REGIndex";
+}
+
+<h2>Index</h2><br />
+<h3>@Session["username"].ToString()</h3><br />
+
+@if (Model.IDROOM < 400)
+{
+    @Html.ActionLink("ยัง ใบเสร็จชำระค่าบริการ", "bill", "regular")<br />
+    @Html.ActionLink("แจ้งคำร้องเรียน", "Index", "COMPLAINs")<br />
+    @Html.ActionLink("สถานะซักรีด", "Index", "LAUNDRies")<br />
+    @Html.ActionLink("ยัง แจ้งการใช้บริการ", "service", "regular")<br />
+    @Html.ActionLink("บันทึกการจอดรถ", "Index", "CARPARKs")<br />
+    @Html.ActionLink("เลขน้ำ เลขไฟ ในแต่ละเดือน", "Index", "METERs")<br />
+    @Html.ActionLink("ค่าการใช้บริการ ฟิสเนท", "REGfitness", "FITNESSes")<br />}
+else
+{
+    @Html.ActionLink("ยัง ใบเสร็จชำระค่าบริการ", "bill", "regular")<br />
+    @Html.ActionLink("แจ้งคำร้องเรียน", "Index", "COMPLAINs")<br />
+    @Html.ActionLink("สถานะซักรีด", "Index", "LAUNDRies")<br />
+    @Html.ActionLink("ยัง เปลี่ยนแปลงเวลาทำความสะอาดห้อง", "VIPcleantime", "ROOMs")<br />
+    @Html.ActionLink("ยัง เปลี่ยนแปลงเวลารับเสื้อผ้าซักรีด", "VIPTime", "VIPROOMs")
+    @Html.ActionLink("บันทึกการจอดรถ", "Index", "CARPARKs")<br />
+    @Html.ActionLink("เลขน้ำ เลขไฟ ในแต่ละเดือน", "Index", "METERs")<br />
+    @Html.ActionLink("ค่าการใช้บริการ ฟิสเนท", "REGfitness", "FITNESSes")<br />
+
+}
+

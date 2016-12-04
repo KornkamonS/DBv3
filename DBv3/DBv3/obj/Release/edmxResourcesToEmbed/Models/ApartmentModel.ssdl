@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ABSENC">
+    <Key>
+      <PropertyRef Name="NO" />
+    </Key>
+    <Property Name="NO" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="EMID" Type="number" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="DATEABSENC" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BILL">
+    <Key>
+      <PropertyRef Name="IDBILL" />
+    </Key>
+    <Property Name="IDBILL" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="FITNESSBILL" Type="number" Precision="7" Scale="2" />
+    <Property Name="ELECTRICITYBILL" Type="number" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="WATERBILL" Type="number" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="INTERNETBILL" Type="number" Precision="7" Scale="2" />
+    <Property Name="CLEANBILL" Type="number" Precision="7" Scale="0" />
+    <Property Name="DATEBILL" Type="date" Nullable="false" />
+    <Property Name="STATUS" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="IDBUILDING" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="IDRECEIVER" Type="number" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="IDROOM" Type="number" Precision="10" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BUILDING">
+    <Key>
+      <PropertyRef Name="IDBUILDING" />
+    </Key>
+    <Property Name="KEEPER" Type="number" Precision="13" Scale="0" />
+    <Property Name="NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="IDBUILDING" Type="number" Precision="10" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CAR">
+    <Key>
+      <PropertyRef Name="CARNUMBER" />
+      <PropertyRef Name="PROVINCE" />
+    </Key>
+    <Property Name="IDCARD" Type="number" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="CARNUMBER" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="PROVINCE" Type="varchar2" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CARPARK">
+    <Key>
+      <PropertyRef Name="NO" />
+    </Key>
+    <Property Name="NO" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="TIMEIN" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="TIMEOUT" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="CARNUMBER" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="PROVINCE" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="IDRECORDER" Type="number" Precision="13" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMPLAIN">
+    <Key>
+      <PropertyRef Name="IDCOMPLAIN" />
+    </Key>
+    <Property Name="IDCARD" Type="number" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="DETAIL" Type="varchar2" MaxLength="100" Nullable="false" />
+    <Property Name="STATUS" Type="varchar2" MaxLength="40" Nullable="false" />
+    <Property Name="IDCOMPLAIN" Type="number" Precision="10" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EXPEND">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="DETAIL" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="PRICE" Type="number" Precision="7" Scale="0" Nullable="false" />
+    <Property Name="DATEEXPEND" Type="date" Nullable="false" />
+    <Property Name="IDRECORDER" Type="number" Precision="13" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FITNESS">
+    <Key>
+      <PropertyRef Name="NO" />
+    </Key>
+    <Property Name="NO" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="RESIDENT" Type="number" Precision="13" Scale="0" />
+    <Property Name="DAY" Type="date" />
+    <Property Name="TIME" Type="varchar2" MaxLength="20" />
+    <Property Name="PRICE" Type="number" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="LATE">
+    <Key>
+      <PropertyRef Name="NO" />
+    </Key>
+    <Property Name="NO" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="EMID" Type="number" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="DATELATE" Type="date" Nullable="false" />
+    <Property Name="TIMEATTENDANCE" Type="varchar2" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LAUNDRY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="ROOM" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="BUILDING" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="DATELAUNDRY" Type="date" Nullable="false" />
+    <Property Name="PRICE" Type="number" Precision="7" Scale="0" Nullable="false" />
+    <Property Name="STATUS" Type="varchar2" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LEAVE">
+    <Key>
+      <PropertyRef Name="NO" />
+    </Key>
+    <Property Name="NO" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="EMID" Type="number" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="DATELEAVE" Type="date" Nullable="false" />
+    <Property Name="TIME" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="DETAIL" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="STATUS" Type="varchar2" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="METER">
+    <Key>
+      <PropertyRef Name="IDROOM" />
+      <PropertyRef Name="YEAR" />
+      <PropertyRef Name="MONTH" />
+      <PropertyRef Name="IDBUILDING" />
+    </Key>
+    <Property Name="IDROOM" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="YEAR" Type="varchar2" MaxLength="4" Nullable="false" />
+    <Property Name="MONTH" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="IDBUILDING" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="NOWATER" Type="number" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="NOELECTRICITY" Type="number" Precision="7" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PERSON">
+    <Key>
+      <PropertyRef Name="IDCARD" />
+    </Key>
+    <Property Name="IDCARD" Type="number" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="LASTNAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="GENDER" Type="varchar2" MaxLength="10" />
+    <Property Name="POSITION" Type="varchar2" MaxLength="20" />
+    <Property Name="IDROOM" Type="number" Precision="10" Scale="0" />
+    <Property Name="HIREDATE" Type="date" Nullable="false" />
+    <Property Name="ADDRESS" Type="varchar2" MaxLength="50" />
+    <Property Name="PHONENUMBER" Type="varchar2" MaxLength="10" />
+    <Property Name="IDBUILDING" Type="number" Precision="10" Scale="0" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="REGULAROOM">
+    <Key>
+      <PropertyRef Name="IDROOM" />
+      <PropertyRef Name="IDBUILDING" />
+    </Key>
+    <Property Name="SEVICE" Type="varchar2" MaxLength="50" />
+    <Property Name="INTERNET" Type="varchar2" MaxLength="50" />
+    <Property Name="IDROOM" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="IDBUILDING" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="PRICE" Type="number" Precision="7" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ROOM">
+    <Key>
+      <PropertyRef Name="IDROOM" />
+      <PropertyRef Name="IDBUILDING" />
+    </Key>
+    <Property Name="IDROOM" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="STATUS" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="MAID" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="CLEANTIME" Type="varchar2" MaxLength="20" />
+    <Property Name="CLEANDATE" Type="varchar2" MaxLength="20" />
+    <Property Name="IDBUILDING" Type="number" Precision="10" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SALARYTB">
+    <Key>
+      <PropertyRef Name="IDCARD" />
+    </Key>
+    <Property Name="IDCARD" Type="number" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="SALARY" Type="number" Precision="7" Scale="0" />
+  </EntityType>
+  <EntityType Name="VIPROOM">
+    <Key>
+      <PropertyRef Name="IDROOM" />
+      <PropertyRef Name="IDBUILDING" />
+    </Key>
+    <Property Name="IDROOM" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="IDBUILDING" Type="number" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="PRICE" Type="number" Precision="7" Scale="0" Nullable="false" />
+    <Property Name="TIME" Type="varchar2" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WORKTIME">
+    <Key>
+      <PropertyRef Name="EMID" />
+      <PropertyRef Name="DATEWORKON" />
+      <PropertyRef Name="TIMESTART" />
+      <PropertyRef Name="TIMESTOP" />
+    </Key>
+    <Property Name="EMID" Type="number" Precision="13" Scale="0" Nullable="false" />
+    <Property Name="DATEWORKON" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="TIMESTART" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="TIMESTOP" Type="varchar2" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="ABSENC_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ABSENC" Type="Self.ABSENC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="ABSENC">
+        <PropertyRef Name="EMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BILL_CON">
+    <End Role="BUILDING" Type="Self.BUILDING" Multiplicity="1" />
+    <End Role="BILL" Type="Self.BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BUILDING">
+        <PropertyRef Name="IDBUILDING" />
+      </Principal>
+      <Dependent Role="BILL">
+        <PropertyRef Name="IDBUILDING" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BILL1_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="BILL" Type="Self.BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="BILL">
+        <PropertyRef Name="IDRECEIVER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BUILDING_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="0..1" />
+    <End Role="BUILDING" Type="Self.BUILDING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="BUILDING">
+        <PropertyRef Name="KEEPER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CAR_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CAR" Type="Self.CAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="CAR">
+        <PropertyRef Name="IDCARD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CARPARK_CON">
+    <End Role="CAR" Type="Self.CAR" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CARPARK" Type="Self.CARPARK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CAR">
+        <PropertyRef Name="CARNUMBER" />
+        <PropertyRef Name="PROVINCE" />
+      </Principal>
+      <Dependent Role="CARPARK">
+        <PropertyRef Name="CARNUMBER" />
+        <PropertyRef Name="PROVINCE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CARPARK1_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="CARPARK" Type="Self.CARPARK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="CARPARK">
+        <PropertyRef Name="IDRECORDER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="COMPLAIN1_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="COMPLAIN" Type="Self.COMPLAIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="COMPLAIN">
+        <PropertyRef Name="IDCARD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EXPEND1_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+    <End Role="EXPEND" Type="Self.EXPEND" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="EXPEND">
+        <PropertyRef Name="IDRECORDER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FFK">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="0..1" />
+    <End Role="FITNESS" Type="Self.FITNESS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="FITNESS">
+        <PropertyRef Name="RESIDENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LATE1_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LATE" Type="Self.LATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="LATE">
+        <PropertyRef Name="EMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LAUNDRY_CON">
+    <End Role="ROOM" Type="Self.ROOM" Multiplicity="1" />
+    <End Role="LAUNDRY" Type="Self.LAUNDRY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROOM">
+        <PropertyRef Name="IDROOM" />
+        <PropertyRef Name="IDBUILDING" />
+      </Principal>
+      <Dependent Role="LAUNDRY">
+        <PropertyRef Name="ROOM" />
+        <PropertyRef Name="BUILDING" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LEAVE1_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="LEAVE" Type="Self.LEAVE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="LEAVE">
+        <PropertyRef Name="EMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="METER_CON">
+    <End Role="ROOM" Type="Self.ROOM" Multiplicity="1" />
+    <End Role="METER" Type="Self.METER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROOM">
+        <PropertyRef Name="IDROOM" />
+        <PropertyRef Name="IDBUILDING" />
+      </Principal>
+      <Dependent Role="METER">
+        <PropertyRef Name="IDROOM" />
+        <PropertyRef Name="IDBUILDING" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PERSON_CON">
+    <End Role="ROOM" Type="Self.ROOM" Multiplicity="0..1" />
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROOM">
+        <PropertyRef Name="IDROOM" />
+        <PropertyRef Name="IDBUILDING" />
+      </Principal>
+      <Dependent Role="PERSON">
+        <PropertyRef Name="IDROOM" />
+        <PropertyRef Name="IDBUILDING" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="REGULAROOM_FK">
+    <End Role="ROOM" Type="Self.ROOM" Multiplicity="1" />
+    <End Role="REGULAROOM" Type="Self.REGULAROOM" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ROOM">
+        <PropertyRef Name="IDROOM" />
+        <PropertyRef Name="IDBUILDING" />
+      </Principal>
+      <Dependent Role="REGULAROOM">
+        <PropertyRef Name="IDROOM" />
+        <PropertyRef Name="IDBUILDING" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ROOM1_CON">
+    <End Role="BUILDING" Type="Self.BUILDING" Multiplicity="1" />
+    <End Role="ROOM" Type="Self.ROOM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BUILDING">
+        <PropertyRef Name="IDBUILDING" />
+      </Principal>
+      <Dependent Role="ROOM">
+        <PropertyRef Name="IDBUILDING" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SALARY_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SALARYTB" Type="Self.SALARYTB" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="SALARYTB">
+        <PropertyRef Name="IDCARD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VIPROOM_FK">
+    <End Role="ROOM" Type="Self.ROOM" Multiplicity="1" />
+    <End Role="VIPROOM" Type="Self.VIPROOM" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ROOM">
+        <PropertyRef Name="IDROOM" />
+        <PropertyRef Name="IDBUILDING" />
+      </Principal>
+      <Dependent Role="VIPROOM">
+        <PropertyRef Name="IDROOM" />
+        <PropertyRef Name="IDBUILDING" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WORKTIME1_CON">
+    <End Role="PERSON" Type="Self.PERSON" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="WORKTIME" Type="Self.WORKTIME" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSON">
+        <PropertyRef Name="IDCARD" />
+      </Principal>
+      <Dependent Role="WORKTIME">
+        <PropertyRef Name="EMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="ABSENC" EntityType="Self.ABSENC" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="BILL" EntityType="Self.BILL" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="BUILDING" EntityType="Self.BUILDING" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="CAR" EntityType="Self.CAR" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="CARPARK" EntityType="Self.CARPARK" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="COMPLAIN" EntityType="Self.COMPLAIN" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="EXPEND" EntityType="Self.EXPEND" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="FITNESS" EntityType="Self.FITNESS" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="LATE" EntityType="Self.LATE" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="LAUNDRY" EntityType="Self.LAUNDRY" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="LEAVE" EntityType="Self.LEAVE" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="METER" EntityType="Self.METER" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="PERSON" EntityType="Self.PERSON" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="REGULAROOM" EntityType="Self.REGULAROOM" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="ROOM" EntityType="Self.ROOM" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="SALARYTB" EntityType="Self.SALARYTB" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="VIPROOM" EntityType="Self.VIPROOM" Schema="APARTMENT" store:Type="Tables" />
+    <EntitySet Name="WORKTIME" EntityType="Self.WORKTIME" Schema="APARTMENT" store:Type="Tables" />
+    <AssociationSet Name="ABSENC_CON" Association="Self.ABSENC_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="ABSENC" EntitySet="ABSENC" />
+    </AssociationSet>
+    <AssociationSet Name="BILL_CON" Association="Self.BILL_CON">
+      <End Role="BUILDING" EntitySet="BUILDING" />
+      <End Role="BILL" EntitySet="BILL" />
+    </AssociationSet>
+    <AssociationSet Name="BILL1_CON" Association="Self.BILL1_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="BILL" EntitySet="BILL" />
+    </AssociationSet>
+    <AssociationSet Name="BUILDING_CON" Association="Self.BUILDING_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="BUILDING" EntitySet="BUILDING" />
+    </AssociationSet>
+    <AssociationSet Name="CAR_CON" Association="Self.CAR_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="CAR" EntitySet="CAR" />
+    </AssociationSet>
+    <AssociationSet Name="CARPARK_CON" Association="Self.CARPARK_CON">
+      <End Role="CAR" EntitySet="CAR" />
+      <End Role="CARPARK" EntitySet="CARPARK" />
+    </AssociationSet>
+    <AssociationSet Name="CARPARK1_CON" Association="Self.CARPARK1_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="CARPARK" EntitySet="CARPARK" />
+    </AssociationSet>
+    <AssociationSet Name="COMPLAIN1_CON" Association="Self.COMPLAIN1_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="COMPLAIN" EntitySet="COMPLAIN" />
+    </AssociationSet>
+    <AssociationSet Name="EXPEND1_CON" Association="Self.EXPEND1_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="EXPEND" EntitySet="EXPEND" />
+    </AssociationSet>
+    <AssociationSet Name="FFK" Association="Self.FFK">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="FITNESS" EntitySet="FITNESS" />
+    </AssociationSet>
+    <AssociationSet Name="LATE1_CON" Association="Self.LATE1_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="LATE" EntitySet="LATE" />
+    </AssociationSet>
+    <AssociationSet Name="LAUNDRY_CON" Association="Self.LAUNDRY_CON">
+      <End Role="ROOM" EntitySet="ROOM" />
+      <End Role="LAUNDRY" EntitySet="LAUNDRY" />
+    </AssociationSet>
+    <AssociationSet Name="LEAVE1_CON" Association="Self.LEAVE1_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="LEAVE" EntitySet="LEAVE" />
+    </AssociationSet>
+    <AssociationSet Name="METER_CON" Association="Self.METER_CON">
+      <End Role="ROOM" EntitySet="ROOM" />
+      <End Role="METER" EntitySet="METER" />
+    </AssociationSet>
+    <AssociationSet Name="PERSON_CON" Association="Self.PERSON_CON">
+      <End Role="ROOM" EntitySet="ROOM" />
+      <End Role="PERSON" EntitySet="PERSON" />
+    </AssociationSet>
+    <AssociationSet Name="REGULAROOM_FK" Association="Self.REGULAROOM_FK">
+      <End Role="ROOM" EntitySet="ROOM" />
+      <End Role="REGULAROOM" EntitySet="REGULAROOM" />
+    </AssociationSet>
+    <AssociationSet Name="ROOM1_CON" Association="Self.ROOM1_CON">
+      <End Role="BUILDING" EntitySet="BUILDING" />
+      <End Role="ROOM" EntitySet="ROOM" />
+    </AssociationSet>
+    <AssociationSet Name="SALARY_CON" Association="Self.SALARY_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="SALARYTB" EntitySet="SALARYTB" />
+    </AssociationSet>
+    <AssociationSet Name="VIPROOM_FK" Association="Self.VIPROOM_FK">
+      <End Role="ROOM" EntitySet="ROOM" />
+      <End Role="VIPROOM" EntitySet="VIPROOM" />
+    </AssociationSet>
+    <AssociationSet Name="WORKTIME1_CON" Association="Self.WORKTIME1_CON">
+      <End Role="PERSON" EntitySet="PERSON" />
+      <End Role="WORKTIME" EntitySet="WORKTIME" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

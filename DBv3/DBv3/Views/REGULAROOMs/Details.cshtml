@@ -1,0 +1,50 @@
+﻿@model DBv3.Models.REGULAROOM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>REGULAROOM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SEVICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEVICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERNET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERNET)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ROOM.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROOM.STATUS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

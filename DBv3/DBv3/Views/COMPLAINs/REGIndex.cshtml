@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DBv3.Models.COMPLAIN>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>คำร้องเรียน</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCOMPLAIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PERSON.USERNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DETAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDCOMPLAIN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PERSON.USERNAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DETAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STATUS)
+            </td>
+            <td>
+                @if (item.PERSON.USERNAME == Session["username"].ToString())
+                {  @Html.ActionLink("Edit", "Edit", new { id = item.IDCOMPLAIN })  <br />
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDCOMPLAIN })
+                }
+
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to Menu", "REGIndex", "User")
+</div>

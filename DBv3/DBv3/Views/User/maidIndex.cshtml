@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "maidIndex";
+}
+
+<h2>maidIndex</h2>
+
+@Session["username"].ToString()</h3><br />
+
+@Html.ActionLink("ห้องที่ต้องทำความสะอาด", "MaindROOM", "ROOMs")<br />
+@Html.ActionLink("ห้องที่ต้องไปเอาเสื้อซักรีด", "TIMEVIP", "VIPROOMs")<br />
+@Html.ActionLink("สถานะซักรีดห้องVIPที่ดูแล", "VIPLaundry", "LAUNDRies")<br />
+@Html.ActionLink("ตารางทำงาน", "Index", "WORKTIMEs")
+@Html.ActionLink("ลางาน", "MaidLeave", "LEAVEs")<br />

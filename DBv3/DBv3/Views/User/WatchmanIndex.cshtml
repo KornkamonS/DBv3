@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "WatchmanIndex";
+}
+
+<h2>WatchmanIndex</h2>
+
+@Session["username"].ToString()</h3><br />
+
+@Html.ActionLink("ตารางการทำงาน", "WWorktime", "WORKTIMEs")<br />
+@Html.ActionLink("ตึกที่ต้องดูแล", "Wbuilding", "BUILDINGs")<br />
+@Html.ActionLink("บันทึกการจอดรถ", "Index", "CARPARKs")<br />
+@Html.ActionLink("ลาพักงาน", "Index", "LEAVEs")<br />
